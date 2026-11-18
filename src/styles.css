@@ -754,31 +754,23 @@ p {
 
 .footer .info {
   display: flex;
-  gap: 67px;
-  padding: 100px 0 70px;
+  align-items: flex-start;
+  gap: 120px;
+  padding: 60px 0;
 }
 
 .footer .info h5 {
-  margin: 0 0 67px;
+  margin: 0 0 20px;
   font-weight: 400;
   font-size: 24px;
   line-height: 1.4;
-}
-
-.footer .info .col:first-child h5 {
-  margin-top: 30px;
 }
 
 .footer .info a {
   display: block;
   font-size: 20px;
   line-height: 1.4;
-  max-width: 268px;
-}
-
-.footer .info .col:last-child a {
-  max-width: 188px;
-  word-break: break-all;
+  white-space: nowrap;
 }
 
 .footer .copyright {
@@ -982,9 +974,9 @@ p {
     gap: 40px;
     padding: 40px 0 80px;
   }
-  .footer .info h5,
-  .footer .info .col:first-child h5 {
-    margin: 0 0 20px;
+  .footer .info a {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
   .footer .copyright {
     font-size: 16px;
