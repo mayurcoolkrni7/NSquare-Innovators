@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Header, Hero, About, Partners, Products } from "./components/Top.jsx";
 import { WhyChooseUs, CTA, Testimonials, Contact, Footer } from "./components/Bottom.jsx";
 
@@ -44,7 +44,9 @@ export default function App() {
       <Suspense fallback={<div style={{ minHeight: "100vh", background: "#000" }} />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products/predicta-x" element={<PredictaXPage />} />
+          {/* Route matching is case-insensitive, so /predictax and /PredictaX also work */}
+          <Route path="/predictaX" element={<PredictaXPage />} />
+          <Route path="/products/predicta-x" element={<Navigate to="/predictaX" replace />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </Suspense>

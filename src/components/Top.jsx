@@ -132,7 +132,7 @@ const PARTNERS = [
 export function Partners() {
   // Two copies of the list make a seamless loop; speed = 70px/s like the original ticker.
   const loop = [...PARTNERS, ...PARTNERS];
-  const duration = (PARTNERS.length * (180 + 120)) / 70;
+  const duration = (PARTNERS.length * (200 + 40)) / 70;
   return (
     <section className="section ticker-section">
       <Lines />
@@ -151,7 +151,7 @@ export function Partners() {
 }
 
 const PRODUCTS = [
-  { name: "PredictaX", img: "/media/product-predictax.jpg", to: "/products/predicta-x", alt: "PredictaX – AI demand forecasting" },
+  { name: "PredictaX", img: "/media/product-predictax.jpg", to: "/predictaX", alt: "PredictaX – AI demand forecasting" },
   { name: "GenieHire", img: "/media/product-geniehire.png", href: "https://geniehire.ai/", alt: "GenieHire – AI recruitment automation", variant: "right" },
   { name: "Pass98", img: "/media/product-pass98.jpg", href: "https://www.pass98.com/", alt: "Pass98 – interview preparation" },
 ];

@@ -52,7 +52,7 @@ const PRODUCTS_MENU = [
   ["FIESA", "https://fiesa.app/"],
   ["Care Analytic Pro", `${SITE}/products/care-analytics`],
   ["Call Integra", `${SITE}/products/call-integra-integration-with-crm`],
-  ["Predicta X", "/products/predicta-x"],
+  ["Predicta X", "/predictaX"],
 ];
 
 /* ---------- small building blocks ---------- */

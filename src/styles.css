@@ -424,14 +424,15 @@ p {
   animation: ticker var(--ticker-duration, 26.6s) linear infinite;
 }
 
-/* Partner logos are shown as uniform grey marks so they sit quietly on the dark theme */
+/* Partner logos keep their original colours on a light plate so dark logos stay visible */
 .ticker-track img {
-  width: 180px;
-  height: 56px;
+  width: 200px;
+  height: 80px;
   object-fit: contain;
-  margin-right: 120px;
-  filter: grayscale(1) brightness(0) invert(0.62);
-  opacity: 0.9;
+  margin-right: 40px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  background: #ffffff;
 }
 
 @keyframes ticker {
@@ -892,9 +893,10 @@ p {
     margin-top: 60px;
   }
   .ticker-track img {
-    width: 130px;
-    height: 44px;
-    margin-right: 64px;
+    width: 140px;
+    height: 60px;
+    padding: 10px 14px;
+    margin-right: 24px;
   }
   .products .cards {
     margin-top: 60px;

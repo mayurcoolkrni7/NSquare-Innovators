@@ -7,7 +7,7 @@ with the same layout, sections, images, videos, fonts and animations.
 
 ```
 index.html                 page title, meta tags, favicon
-src/App.jsx                routes: "/" (home) and "/products/predicta-x"
+src/App.jsx                routes: "/" (home) and "/predictaX"
 src/pages/PredictaX.jsx    PredictaX product page (styles in src/predictax.css)
 src/components/Top.jsx     Header, Hero, About, Partners ticker, Products
 src/components/Bottom.jsx  Why Choose Us, CTA, Testimonials, Contact form, Footer
@@ -65,8 +65,8 @@ Framer's built-in form backend doesn't exist outside Framer, so the form works i
 
 ## Pages
 
-- `/` — Innovators landing page. The PredictaX card opens `/products/predicta-x`.
-- `/products/predicta-x` — PredictaX product page. `vercel.json` rewrites routes to `index.html`,
+- `/` — Innovators landing page. The PredictaX card opens `/predictaX`.
+- `/predictaX` — PredictaX product page (e.g. nsquareinnovators.com/predictaX). `vercel.json` rewrites routes to `index.html`,
   so refreshing or sharing this URL works on Vercel.
 
 ## Editing content
@@ -74,5 +74,5 @@ Framer's built-in form backend doesn't exist outside Framer, so the form works i
 - Text: edit the JSX in `src/components/`.
 - Images/videos: replace the file in `public/media/` with a new one of the same name.
 - Partner logos: add/remove PNGs in `public/partners/` and update the `PARTNERS` list in `src/components/Top.jsx`.
-  They are shown in grey automatically (CSS filter), so upload the normal colour logo.
+  They show in full colour on a white plate.
 - Colours/fonts/sizes: variables at the top of `src/styles.css`.
