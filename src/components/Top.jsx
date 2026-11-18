@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { BlurWords, Lines, Reveal, RollLabel } from "./motion.jsx";
 
 const NAV = [
@@ -117,12 +118,21 @@ export function About() {
   );
 }
 
-const PARTNERS = [1, 2, 3, 4, 5].map((n) => `/media/partner-${n}.png`);
+const PARTNERS = [
+  ["whirlpool", "Whirlpool"],
+  ["elevator-services", "Elevator Services Group"],
+  ["lulu-exchange", "LuLu Exchange"],
+  ["roha-tech", "Roha Tech"],
+  ["maxus-coral", "Maxus Coral"],
+  ["lg", "LG"],
+  ["moonz", "Moonz"],
+  ["ltimindtree", "LTIMindtree"],
+].map(([file, name]) => ({ src: `/partners/${file}.png`, name }));
 
 export function Partners() {
   // Two copies of the list make a seamless loop; speed = 70px/s like the original ticker.
   const loop = [...PARTNERS, ...PARTNERS];
-  const duration = (PARTNERS.length * (222 + 150)) / 70;
+  const duration = (PARTNERS.length * (180 + 120)) / 70;
   return (
     <section className="section ticker-section">
       <Lines />
@@ -130,8 +140,8 @@ export function Partners() {
         <BlurWords className="h2" lines={[[["Our Premium"]], [["Innovation Partners"]]]} />
         <div className="ticker">
           <div className="ticker-track" style={{ "--ticker-duration": `${duration}s` }}>
-            {loop.map((src, i) => (
-              <img key={i} src={src} alt="Partner logo" aria-hidden={i >= PARTNERS.length} />
+            {loop.map((p, i) => (
+              <img key={i} src={p.src} alt={p.name} aria-hidden={i >= PARTNERS.length} />
             ))}
           </div>
         </div>
@@ -141,10 +151,23 @@ export function Partners() {
 }
 
 const PRODUCTS = [
-  { name: "PredictaX", img: "/media/product-predictax.jpg", href: "https://www.nsquarexperts.com/products/predicta-x", alt: "PredictaX – AI demand forecasting" },
+  { name: "PredictaX", img: "/media/product-predictax.jpg", to: "/products/predicta-x", alt: "PredictaX – AI demand forecasting" },
   { name: "GenieHire", img: "/media/product-geniehire.png", href: "https://geniehire.ai/", alt: "GenieHire – AI recruitment automation", variant: "right" },
   { name: "Pass98", img: "/media/product-pass98.jpg", href: "https://www.pass98.com/", alt: "Pass98 – interview preparation" },
 ];
+
+// Internal pages use the router; external products open their own sites.
+function ProductLink({ p, className, children }) {
+  return p.to ? (
+    <Link className={className} to={p.to}>
+      {children}
+    </Link>
+  ) : (
+    <a className={className} href={p.href}>
+      {children}
+    </a>
+  );
+}
 
 export function Products() {
   return (
@@ -155,14 +178,12 @@ export function Products() {
         <div className="cards">
           {PRODUCTS.map((p) => (
             <article key={p.name} className={`product-card ${p.variant || ""}`}>
-              <a className="img-wrap" href={p.href}>
+              <ProductLink p={p} className="img-wrap">
                 <img src={p.img} alt={p.alt} loading="lazy" />
-              </a>
+              </ProductLink>
               <div className="meta">
                 <h3 className="h3">
-                  <a href={p.href}>
-                    {p.name}
-                  </a>
+                  <ProductLink p={p}>{p.name}</ProductLink>
                 </h3>
               </div>
             </article>

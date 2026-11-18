@@ -17,21 +17,25 @@ const ASSETS = [
   ["cta.mp4", "/assets/KTAAPBAgtUUisqNeh39FAKQ.mp4"],
   ["about-1.jpg", "/images/hwyH2f2NmsFZVmDsrFWAjMHizTs.jpg?scale-down-to=1024"],
   ["about-2.png", "/images/ZlkaAK4wEc8rGMTVXV5Gj4Z3E.png?scale-down-to=1024"],
-  ["partner-1.png", "/images/lmhVkf7ejDqejU8t5xJ436ms00.png"],
-  ["partner-2.png", "/images/dpi5VblCPsYXgR1GhlibhnX0.png"],
-  ["partner-3.png", "/images/kFI4RDNHt3kDysISUe7nRAXVLE.png"],
-  ["partner-4.png", "/images/vombHnvqXB6EBAzfGSNIF41DZQI.png"],
-  ["partner-5.png", "/images/oMJA0IT6f7GA7AoZruWCx6aiCE.png"],
   ["product-predictax.jpg", "/images/8nlE5Aui2cIlIa1r0aTwgW9xD8.jpg?scale-down-to=2048"],
   ["product-geniehire.png", "/images/X3dY3C5Y8ha2GBZIwYnVguqQeNQ.png?scale-down-to=2048"],
   ["product-pass98.jpg", "/images/zzOBgP9exBc9WQOZSQgQKLl6SPI.jpg?scale-down-to=2048"],
   ["avatar-lucas.png", "/images/tKsNhbkJx6CCsVhCrpVpj9tZI.png"],
   ["avatar-matteo.jpg", "/images/nJsCy1CdYe4jdgGpYPw2qBNASx4.jpg"],
+  // PredictaX page
+  ["px/logo.png", "/images/s0NR09Ca0Z9dq2nDxuZuhkEM9qo.png"],
+  ["px/hero.mp4", "/assets/2bnJ3numzbS1cTruCFeB1RiQ6k.mp4"],
+  ["px/compare-icon.png", "/images/WqEZfwT2iMHCHtSNNtIWWzSn0s.png"],
+  ["px/icon-without.svg", "/images/jdzexwVUUG0v9Tn88L57oI3V28w.svg"],
+  ["px/icon-with.svg", "/images/dGO7W1b7kAcYFMMZtWk6Qz0N4Zw.svg"],
+  ["px/badge-partners.png", "/images/lTSId7AAeRrPvofXskKu4N5IoXI.png"],
+  ["px/badge-cert.png", "/images/7Imqm26fmIsq8U4XmLkmBgwA1tQ.png"],
 ];
 
 let failed = 0;
 for (const [name, path] of ASSETS) {
   const file = join(outDir, name);
+  mkdirSync(dirname(file), { recursive: true });
   if (existsSync(file)) continue;
   try {
     const res = await fetch(CDN + path);

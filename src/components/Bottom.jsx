@@ -253,7 +253,6 @@ export function Contact() {
 export function Footer() {
   return (
     <>
-      <div className="blog-spacer" />
       <footer className="footer">
         <div className="container">
           <BlurWords as="h2" className="wordmark" lines={[[["INNOVATORS"]]]} />

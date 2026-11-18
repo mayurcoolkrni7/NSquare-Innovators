@@ -424,11 +424,14 @@ p {
   animation: ticker var(--ticker-duration, 26.6s) linear infinite;
 }
 
+/* Partner logos are shown as uniform grey marks so they sit quietly on the dark theme */
 .ticker-track img {
-  width: 222px;
-  height: 40px;
+  width: 180px;
+  height: 56px;
   object-fit: contain;
-  margin-right: 150px;
+  margin-right: 120px;
+  filter: grayscale(1) brightness(0) invert(0.62);
+  opacity: 0.9;
 }
 
 @keyframes ticker {
@@ -684,11 +687,7 @@ p {
 
 /* ---------- Contact ---------- */
 .contact {
-  padding: 60px 0;
-}
-
-.contact .grid-3 {
-  min-height: 787px;
+  padding: 60px 0 120px;
 }
 
 .contact form {
@@ -729,11 +728,6 @@ p {
   font-family: var(--f-dm);
   font-size: 16px;
   color: var(--muted);
-}
-
-.blog-spacer {
-  height: 332px;
-  background: var(--bg);
 }
 
 /* ---------- Footer ---------- */
@@ -897,6 +891,11 @@ p {
   .ticker {
     margin-top: 60px;
   }
+  .ticker-track img {
+    width: 130px;
+    height: 44px;
+    margin-right: 64px;
+  }
   .products .cards {
     margin-top: 60px;
   }
@@ -966,14 +965,8 @@ p {
     min-height: 0;
     gap: 60px;
   }
-  .contact .grid-3 {
-    min-height: 0;
-  }
   .contact form {
     padding-top: 60px;
-  }
-  .blog-spacer {
-    height: 120px;
   }
   .footer {
     padding-top: 80px;

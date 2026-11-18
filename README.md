@@ -7,19 +7,21 @@ with the same layout, sections, images, videos, fonts and animations.
 
 ```
 index.html                 page title, meta tags, favicon
-src/App.jsx                section order
+src/App.jsx                routes: "/" (home) and "/products/predicta-x"
+src/pages/PredictaX.jsx    PredictaX product page (styles in src/predictax.css)
 src/components/Top.jsx     Header, Hero, About, Partners ticker, Products
 src/components/Bottom.jsx  Why Choose Us, CTA, Testimonials, Contact form, Footer
 src/components/motion.jsx  shared animations (word blur-in, reveal, roll button)
-src/styles.css             all styling + tablet (≤1359px) and mobile (≤809px) breakpoints
+src/styles.css             all styling + tablet (≤1023px) and mobile (≤809px) breakpoints
 public/media/              images + videos (downloaded by scripts/fetch-assets.mjs)
+public/partners/           partner logos used in the ticker (already included)
 ```
 
 ## 1. Run it locally
 
 ```bash
 npm install
-npm run fetch-assets   # downloads the 15 images/videos from your Framer project into public/media
+npm run fetch-assets   # downloads the images/videos from Framer into public/media (home + PredictaX page)
 npm run dev            # open http://localhost:5173
 ```
 
@@ -61,8 +63,16 @@ Framer's built-in form backend doesn't exist outside Framer, so the form works i
   Settings → Environment Variables, add `VITE_FORM_ENDPOINT=https://formspree.io/f/xxxxxx` and redeploy.
   Submissions then reach your inbox without the visitor leaving the page. (See `.env.example` for local use.)
 
+## Pages
+
+- `/` — Innovators landing page. The PredictaX card opens `/products/predicta-x`.
+- `/products/predicta-x` — PredictaX product page. `vercel.json` rewrites routes to `index.html`,
+  so refreshing or sharing this URL works on Vercel.
+
 ## Editing content
 
 - Text: edit the JSX in `src/components/`.
 - Images/videos: replace the file in `public/media/` with a new one of the same name.
+- Partner logos: add/remove PNGs in `public/partners/` and update the `PARTNERS` list in `src/components/Top.jsx`.
+  They are shown in grey automatically (CSS filter), so upload the normal colour logo.
 - Colours/fonts/sizes: variables at the top of `src/styles.css`.
