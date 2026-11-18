@@ -74,7 +74,7 @@ export function WhyChooseUs() {
         <div className="track">
           <div className="sticky">
             <div className="title">
-              <p className="bullet">[Why Choose Us]</p>
+              <p className="bullet">Why Choose Us</p>
               <BlurWords className="h2" lines={[[["Trusted by"]], [["Drivers Worldwide"]]]} />
             </div>
             <div className="grid-3 facts">

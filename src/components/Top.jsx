@@ -84,7 +84,7 @@ export function About() {
     <section className="section about" id="about">
       <Lines />
       <Reveal className="container" y={80}>
-        <p className="bullet">[About us]</p>
+        <p className="bullet">About us</p>
         <div className="grid-3 details">
           <div className="col">
             <h2 className="h3">A Legacy of Experience and Trust</h2>
@@ -117,23 +117,12 @@ export function About() {
   );
 }
 
-const PARTNERS = [
-  { name: "Elevator Services Group", slug: "elevator" },
-  { name: "LuLu Exchange", slug: "lulu-exchange" },
-  { name: "Roha Tech", slug: "roha-tech" },
-  { name: "Maxus Coral", slug: "maxus-coral" },
-  { name: "LG", slug: "lg" },
-  { name: "Moonz", slug: "moonz" },
-  { name: "LTIMindtree", slug: "ltimindtree" },
-  { name: "Whirlpool", slug: "whirlpool" },
-];
-const CARD_W = 220; // keep in sync with .partner-card width + margin in styles.css
-const CARD_GAP = 32;
+const PARTNERS = [1, 2, 3, 4, 5].map((n) => `/media/partner-${n}.png`);
 
 export function Partners() {
   // Two copies of the list make a seamless loop; speed = 70px/s like the original ticker.
   const loop = [...PARTNERS, ...PARTNERS];
-  const duration = (PARTNERS.length * (CARD_W + CARD_GAP)) / 70;
+  const duration = (PARTNERS.length * (222 + 150)) / 70;
   return (
     <section className="section ticker-section">
       <Lines />
@@ -141,10 +130,8 @@ export function Partners() {
         <BlurWords className="h2" lines={[[["Our Premium"]], [["Innovation Partners"]]]} />
         <div className="ticker">
           <div className="ticker-track" style={{ "--ticker-duration": `${duration}s` }}>
-            {loop.map((p, i) => (
-              <div className="partner-card" key={i} aria-hidden={i >= PARTNERS.length}>
-                <img src={`/media/client-${p.slug}.png`} alt={p.name} loading="lazy" />
-              </div>
+            {loop.map((src, i) => (
+              <img key={i} src={src} alt="Partner logo" aria-hidden={i >= PARTNERS.length} />
             ))}
           </div>
         </div>
@@ -156,7 +143,7 @@ export function Partners() {
 const PRODUCTS = [
   { name: "PredictaX", img: "/media/product-predictax.jpg", href: "https://www.nsquarexperts.com/products/predicta-x", alt: "PredictaX – AI demand forecasting" },
   { name: "GenieHire", img: "/media/product-geniehire.png", href: "https://geniehire.ai/", alt: "GenieHire – AI recruitment automation", variant: "right" },
-  { name: "Pass98", img: "/media/product-pass98.jpg", href: "https://www.pass98.com/", alt: "Pass98 – interview preparation", variant: "small" },
+  { name: "Pass98", img: "/media/product-pass98.jpg", href: "https://www.pass98.com/", alt: "Pass98 – interview preparation" },
 ];
 
 export function Products() {
@@ -177,9 +164,6 @@ export function Products() {
                     {p.name}
                   </a>
                 </h3>
-                <a className="view" href={p.href}>
-                  View Details
-                </a>
               </div>
             </article>
           ))}
