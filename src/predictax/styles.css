@@ -577,3 +577,7 @@
   .footer__top { flex-direction: column; }
   .footer__bottom { font-size: 15px; gap: 6px; }
 }
+
+/* Space between the last section and the Innovators footer */
+.pxp-page > main { padding-bottom: 100px; }
+@media (max-width: 809px) { .pxp-page > main { padding-bottom: 60px; } }

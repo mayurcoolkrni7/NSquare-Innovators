@@ -16,7 +16,7 @@ import "@fontsource/dm-sans/600.css";
 import "@fontsource/dm-sans/700.css";
 import "./styles.css";
 import { Header } from "../components/Top.jsx";
-import Footer from "./components/Footer";
+import { Footer } from "../components/Bottom.jsx";
 import { CTA, Comparison, Decision, Engine, Hero, Layers, Problem, Stats, Steps } from "./components/Sections";
 
 export default function PredictaXPage() {

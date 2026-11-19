@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { BlurWords, FlipButton, Reveal } from './motion'
+import { RollLabel } from '../../components/motion.jsx'
 import { comparison, engines, layers, links, problems, reasons, stats, steps } from '../data'
 
 /* ───────── Hero ───────── */
@@ -53,7 +55,10 @@ function SplitSection({ eyebrow, title, body, cards, reverse }) {
             <p className="split__body">{body}</p>
           </Reveal>
           <Reveal className="split__btn">
-            <FlipButton href={links.contact}>Get in touch</FlipButton>
+            {/* Same style as the home page buttons; opens the home page contact form */}
+            <Link to="/#contact" className="roll-btn solid px-get-btn">
+              <RollLabel>Get in touch</RollLabel>
+            </Link>
           </Reveal>
         </div>
         <div className="split__cards">
