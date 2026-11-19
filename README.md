@@ -8,7 +8,7 @@ with the same layout, sections, images, videos, fonts and animations.
 ```
 index.html                 page title, meta tags, favicon
 src/App.jsx                routes: "/" (home) and "/predictaX"
-src/pages/PredictaX.jsx    PredictaX product page (styles in src/predictax.css)
+src/predictax/             PredictaX product page (PredictaXPage.jsx, data.js for copy/links, styles.css)
 src/components/Top.jsx     Header, Hero, About, Partners ticker, Products
 src/components/Bottom.jsx  Why Choose Us, CTA, Testimonials, Contact form, Footer
 src/components/motion.jsx  shared animations (word blur-in, reveal, roll button)

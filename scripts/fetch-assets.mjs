@@ -30,6 +30,7 @@ const ASSETS = [
   ["px/icon-with.svg", "/images/dGO7W1b7kAcYFMMZtWk6Qz0N4Zw.svg"],
   ["px/badge-partners.png", "/images/lTSId7AAeRrPvofXskKu4N5IoXI.png"],
   ["px/badge-cert.png", "/images/7Imqm26fmIsq8U4XmLkmBgwA1tQ.png"],
+  ["px/background-lines.svg", "/images/AdPfwI4laWSMfyInnvNTBjrcR0.svg"],
 ];
 
 let failed = 0;

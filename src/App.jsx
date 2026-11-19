@@ -3,7 +3,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Header, Hero, About, Partners, Products } from "./components/Top.jsx";
 import { WhyChooseUs, CTA, Testimonials, Contact, Footer } from "./components/Bottom.jsx";
 
-const PredictaXPage = lazy(() => import("./pages/PredictaX.jsx"));
+const PredictaXPage = lazy(() => import("./predictax/PredictaXPage.jsx"));
 
 function Home() {
   return (
