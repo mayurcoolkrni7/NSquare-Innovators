@@ -15,7 +15,7 @@ import "@fontsource/inter/600.css";
 import "@fontsource/dm-sans/600.css";
 import "@fontsource/dm-sans/700.css";
 import "./styles.css";
-import Navbar from "./components/Navbar";
+import { Header } from "../components/Top.jsx";
 import Footer from "./components/Footer";
 import { CTA, Comparison, Decision, Engine, Hero, Layers, Problem, Stats, Steps } from "./components/Sections";
 
@@ -30,7 +30,10 @@ export default function PredictaXPage() {
 
   return (
     <div className="page pxp-page">
-      <Navbar />
+      {/* Innovators top menu (same as the home page) */}
+      <div className="px-top">
+        <Header />
+      </div>
       <main>
         <Hero />
         <Stats />

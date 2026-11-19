@@ -224,6 +224,13 @@ p {
   padding: 24px var(--gutter) 32px;
 }
 
+/* Holds the (absolutely positioned) header on pages without the home hero, e.g. /predictaX */
+.px-top {
+  position: relative;
+  z-index: 50;
+  height: 93px;
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
@@ -814,6 +821,9 @@ p {
     margin-left: 0;
   }
   .header-inner {
+    height: 64px;
+  }
+  .px-top {
     height: 64px;
   }
   .hero {

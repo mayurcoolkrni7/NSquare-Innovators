@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { BlurWords, Lines, Reveal, RollLabel } from "./motion.jsx";
 
 const NAV = [
@@ -9,19 +9,34 @@ const NAV = [
   { label: "Contact us", href: "#contact" },
 ];
 
+// Same menu on every page. Off the home page, links go back to the home sections (/#about etc.).
+function NavLink({ item, onClick }) {
+  const { pathname } = useLocation();
+  if (pathname === "/") {
+    return (
+      <a className="nav-link" href={item.href} onClick={onClick}>
+        {item.label}
+      </a>
+    );
+  }
+  return (
+    <Link className="nav-link" to={`/${item.href}`} onClick={onClick}>
+      {item.label}
+    </Link>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="header">
       <div className="container header-inner">
-        <a href="#" aria-label="NSquare Innovators home">
+        <Link to="/" aria-label="NSquare Innovators home">
           <img className="logo" src="/media/logo.png" alt="NSquare Innovators" />
-        </a>
+        </Link>
         <nav className="nav desktop">
           {NAV.map((n) => (
-            <a key={n.href} className="nav-link" href={n.href}>
-              {n.label}
-            </a>
+            <NavLink key={n.href} item={n} />
           ))}
         </nav>
         <button
@@ -45,9 +60,7 @@ export function Header() {
           >
             <nav>
               {NAV.map((n) => (
-                <a key={n.href} className="nav-link" href={n.href} onClick={() => setOpen(false)}>
-                  {n.label}
-                </a>
+                <NavLink key={n.href} item={n} onClick={() => setOpen(false)} />
               ))}
             </nav>
           </motion.div>
