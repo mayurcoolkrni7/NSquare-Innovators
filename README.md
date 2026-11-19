@@ -7,7 +7,8 @@ with the same layout, sections, images, videos, fonts and animations.
 
 ```
 index.html                 page title, meta tags, favicon
-src/App.jsx                routes: "/" (home) and "/predictaX"
+src/App.jsx                routes: "/" (home), "/predictaX" and "/manthan360"
+public/manthan360.html     Manthan 360 landing page (static HTML, served at /manthan360)
 src/predictax/             PredictaX product page (PredictaXPage.jsx, data.js for copy/links, styles.css)
 src/components/Top.jsx     Header, Hero, About, Partners ticker, Products
 src/components/Bottom.jsx  Why Choose Us, CTA, Testimonials, Contact form, Footer

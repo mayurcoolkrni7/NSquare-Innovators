@@ -2,7 +2,10 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/((?!assets/|media/|partners/).*)", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/manthan360", "destination": "/manthan360.html" },
+    { "source": "/((?!assets/|media/|partners/).*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

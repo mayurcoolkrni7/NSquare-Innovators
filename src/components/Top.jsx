@@ -172,6 +172,8 @@ const PRODUCTS = [
   { name: "PredictaX", img: "/media/product-predictax.jpg", to: "/predictaX", alt: "PredictaX – AI demand forecasting" },
   { name: "GenieHire", img: "/media/product-geniehire.png", href: "https://geniehire.ai/", alt: "GenieHire – AI recruitment automation", variant: "right" },
   { name: "Pass98", img: "/media/product-pass98.jpg", href: "https://www.pass98.com/", alt: "Pass98 – interview preparation" },
+  // Static landing page: public/manthan360.html (served at /manthan360 via vercel.json)
+  { name: "Manthan 360", img: "/media/product-manthan360.jpg", href: "/manthan360", alt: "Manthan 360 – UPSC interview prep", variant: "right" },
 ];
 
 // Internal pages use the router; external products open their own sites.

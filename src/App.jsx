@@ -24,6 +24,15 @@ function Home() {
   );
 }
 
+// /manthan360 is a static page (public/manthan360.html). Vercel serves it directly via
+// vercel.json; this fallback covers `npm run dev` and any in-app navigation.
+function Manthan360Redirect() {
+  useEffect(() => {
+    window.location.replace("/manthan360.html");
+  }, []);
+  return null;
+}
+
 // Start each page at the top (or at the #section in the URL).
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -47,6 +56,7 @@ export default function App() {
           {/* Route matching is case-insensitive, so /predictax and /PredictaX also work */}
           <Route path="/predictaX" element={<PredictaXPage />} />
           <Route path="/products/predicta-x" element={<Navigate to="/predictaX" replace />} />
+          <Route path="/manthan360" element={<Manthan360Redirect />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </Suspense>
