@@ -30,9 +30,9 @@ export default function PredictaXPage() {
 
   return (
     <div className="page pxp-page">
-      {/* Innovators top menu (same as the home page) */}
+      {/* Innovators logo bar (menu hidden on this page) */}
       <div className="px-top">
-        <Header />
+        <Header logoOnly />
       </div>
       <main>
         <Hero />

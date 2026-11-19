@@ -26,7 +26,8 @@ function NavLink({ item, onClick }) {
   );
 }
 
-export function Header() {
+// logoOnly: show just the logo (used on the PredictaX page).
+export function Header({ logoOnly = false }) {
   const [open, setOpen] = useState(false);
   return (
     <header className="header">
@@ -34,11 +35,14 @@ export function Header() {
         <Link to="/" aria-label="NSquare Innovators home">
           <img className="logo" src="/media/logo.png" alt="NSquare Innovators" />
         </Link>
+        {!logoOnly && (
         <nav className="nav desktop">
           {NAV.map((n) => (
             <NavLink key={n.href} item={n} />
           ))}
         </nav>
+        )}
+        {!logoOnly && (
         <button
           className={`menu-btn ${open ? "open" : ""}`}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -48,9 +52,10 @@ export function Header() {
           <span />
           <span />
         </button>
+        )}
       </div>
       <AnimatePresence>
-        {open && (
+        {open && !logoOnly && (
           <motion.div
             className="mobile-menu"
             initial={{ height: 0 }}
