@@ -15,7 +15,8 @@ export function Hero() {
         <BlurWords className="hero__title" text="Stop Running Your Business On Last Month's Data." />
       </div>
       <Reveal x={80} y={0} delay={0.4} className="hero__link-wrap">
-        <a href={links.contact} className="hero__link">
+        {/* Goes to the contact form at the bottom of the Innovators home page */}
+        <a href="/#contact" className="hero__link">
           <span>Predicta-X-Automotive</span>
           <img src="/arrow.svg" alt="" width="24" height="24" />
         </a>
@@ -231,20 +232,6 @@ export function Decision() {
           </Reveal>
         ))}
       </div>
-    </section>
-  )
-}
-
-/* ───────── CTA ───────── */
-export function CTA() {
-  return (
-    <section className="cta-wrap">
-      <Reveal className="cta">
-        <h2>See Predicta-x-<span className="orange">Automotive</span></h2>
-        <p>30 minutes. We connect to your data and show you your demand forecast, lead scores and inventory gaps, live. No slides. No pitch. Just intelligence.</p>
-        <a className="cta__btn" href={links.automotive}>Predicta-x-Automotive</a>
-        <div className="cta__glow" />
-      </Reveal>
     </section>
   )
 }

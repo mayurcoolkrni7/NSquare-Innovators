@@ -17,7 +17,7 @@ import "@fontsource/dm-sans/700.css";
 import "./styles.css";
 import { Header } from "../components/Top.jsx";
 import { Footer } from "../components/Bottom.jsx";
-import { CTA, Comparison, Decision, Engine, Hero, Layers, Problem, Stats, Steps } from "./components/Sections";
+import { Comparison, Decision, Engine, Hero, Layers, Problem, Stats, Steps } from "./components/Sections";
 
 export default function PredictaXPage() {
   useEffect(() => {
@@ -43,7 +43,6 @@ export default function PredictaXPage() {
         <Steps />
         <Comparison />
         <Decision />
-        <CTA />
       </main>
       <Footer />
     </div>
